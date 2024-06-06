@@ -9,7 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@syncfusion/ej2-react-layouts": "^25.2.3",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^2.5.1",
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18"

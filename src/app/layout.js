@@ -1,7 +1,5 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import "../../node_modules/@syncfusion/ej2-base/styles/material3.css";
-import "../../node_modules/@syncfusion/ej2-layouts/styles/material3.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {

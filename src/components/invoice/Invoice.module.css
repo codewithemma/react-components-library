@@ -1,9 +1,8 @@
 .container {
-  max-width: 1241px;
-  min-height: 1754px;
-  border: 1px solid black;
+  max-width: 595px;
+  min-height: 842px;
   margin: 20px auto;
-  padding: 20px;
+  padding: 10px;
 }
 .invoice {
   display: flex;
@@ -57,7 +56,6 @@
   font-weight: 700;
   font-size: 14px;
   color: #636161;
-  padding-left: 15px;
 }
 .invoice_table .table_header {
   display: grid;
@@ -65,7 +63,6 @@
   align-items: center;
   justify-content: space-between;
   justify-items: center;
-  gap: 150px;
   background-color: #1655f2;
   padding: 20px;
   color: white;
@@ -73,7 +70,7 @@
 }
 .table_header p {
   font-weight: 700;
-  font-size: 16px;
+  font-size: 14px;
 }
 .table {
   margin-top: 20px;
@@ -82,7 +79,6 @@
   align-items: center;
   justify-content: space-between;
   justify-items: center;
-  gap: 150px;
 }
 .table p {
   font-weight: 500;
@@ -98,7 +94,7 @@
   border-top: 2px dashed gray;
   border-width: medium;
   margin-top: 20px;
-  width: 610.5px;
+  width: 287.5px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-items: center;
@@ -106,43 +102,37 @@
 }
 .inn1 {
   margin-top: 20px;
-  width: 610.5px;
+  width: 287.5px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  justify-items: center;
-  align-items: center;
-  justify-content: center;
   background-color: #0f1eaf;
   color: white;
-  padding: 20px;
   border-radius: 8px;
+  padding: 20px 0px;
 }
-.sub {
-  margin-top: 20px;
-}
-.amt {
-  margin-top: 20px;
-}
+
 .inn .sub p {
   font-weight: 400;
   font-size: 14px;
-  padding-left: 70px;
   margin-bottom: 10px;
+  margin-top: 20px;
+  padding-left: 20px;
 }
 .inn .amt p {
   font-weight: 700;
   font-size: 14px;
-  padding-left: 130px;
   margin-bottom: 10px;
+  margin-top: 20px;
+  padding-left: 7px;
 }
 
 .inn1 .sub p {
   font-weight: 700;
-  font-size: 20px;
-  padding-left: 80px;
+  font-size: 16px;
+  padding-left: 30px;
 }
 .inn1 .amt p {
   font-weight: 700;
-  font-size: 20px;
-  padding-left: 170px;
+  font-size: 16px;
+  padding-left: 40px;
 }
