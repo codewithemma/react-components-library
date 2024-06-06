@@ -138,9 +138,11 @@
 
 .inn1 .sub p {
   font-weight: 700;
-  font-size: 14px;
+  font-size: 20px;
+  padding-left: 80px;
 }
 .inn1 .amt p {
   font-weight: 700;
-  font-size: 14px;
+  font-size: 20px;
+  padding-left: 170px;
 }
