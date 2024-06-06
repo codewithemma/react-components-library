@@ -1,10 +1,10 @@
 import styles from "./page.module.css";
-import Timeline from "@/components/timeline/Timeline";
+import Invoice from "@/components/invoice/Invoice";
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <Timeline />
+      <Invoice />
     </main>
   );
 }
