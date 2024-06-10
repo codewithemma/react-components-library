@@ -1,10 +1,11 @@
 "use client";
+// To use this component, you'll need to run the following command:
+// npm install html2canvas jspdf
 import styles from "./Invoice.module.css";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import { useRef } from "react";
-// To use this component, you'll need to run the following command:
-// npm install html2canvas jspdf
+
 const Invoice = () => {
   const pdfRef = useRef();
   const downloadInvoice = () => {
