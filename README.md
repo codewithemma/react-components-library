@@ -1,4 +1,4 @@
-# Contributing to Random React Components
+# Contributing to  React Components Library
 
 We welcome contributions to our project! By contributing, you help improve and grow our collection of React components. Follow the guidelines below to get started.
 
