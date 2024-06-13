@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #aeaeae;
+  padding: 10px 20px;
+}
+.link:hover {
+  background-color: #1655f2;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
