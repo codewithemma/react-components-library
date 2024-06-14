@@ -58,3 +58,16 @@
   border: none;
   cursor: pointer;
 }
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.pagination p {
+  margin-bottom: 10px;
+}
+.pagination button {
+  width: 100px;
+  height: 30px;
+}

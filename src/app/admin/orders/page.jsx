@@ -86,11 +86,6 @@ const Orders = () => {
     setCurrentPage(currentPage + 1);
   };
 
-  //   const handleChange = (event) => {
-  //     setQuery(event.target.value);
-  //     setCurrentPage(1);
-  //   };
-
   const handleChange = (event) => {
     const searchTerm = event.target.value.toLowerCase();
     setQuery(searchTerm);
@@ -159,12 +154,12 @@ const Orders = () => {
             ))}
         </ul>
       </div>
-      <div>
+      <div className={styles.pagination}>
         <p>
           page{currentPage} of {totalPages}
         </p>
       </div>
-      <div>
+      <div className={styles.pagination}>
         <button onClick={handlePrevPage} disabled={currentPage === 1}>
           Previous
         </button>
