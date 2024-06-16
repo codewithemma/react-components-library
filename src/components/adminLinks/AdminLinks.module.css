@@ -12,6 +12,7 @@
   font-weight: 500;
   color: #aeaeae;
   padding: 10px 20px;
+  transition: all 0.5s ease;
 }
 .link:hover {
   background-color: #1655f2;
