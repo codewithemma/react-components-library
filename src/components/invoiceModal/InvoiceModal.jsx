@@ -14,7 +14,7 @@ const InvoiceModal = ({ setShowPopup, showPopup }) => {
   });
 
   const handleChange = (event) => {
-    setFormData({ ...formData, [event.target.name]: [event.target.value] });
+    setFormData({ ...formData, [event.target.name]: event.target.value });
   };
 
   const handleModalPopUp = () => {
