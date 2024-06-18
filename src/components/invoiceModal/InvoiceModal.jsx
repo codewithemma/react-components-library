@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import styles from "./InvoiceModal.module.css";
 import { MdOutlineCancel } from "react-icons/md";
 import { FiPlus } from "react-icons/fi";
+import { IoTrashOutline } from "react-icons/io5";
 let dummyDatabase = [];
 const InvoiceModal = ({ setShowPopup, showPopup }) => {
   const [formData, setFormData] = useState({
@@ -30,7 +31,6 @@ const InvoiceModal = ({ setShowPopup, showPopup }) => {
       total: "",
     });
     dummyDatabase.push(formData);
-    console.log(dummyDatabase);
   };
 
   return (
@@ -49,7 +49,7 @@ const InvoiceModal = ({ setShowPopup, showPopup }) => {
         >
           <div className={styles.continue_wrapper}>
             <div className={styles.continue_wrapper_header}>
-              <p>Mobosure</p>
+              <p>Generate Invoice</p>
               <MdOutlineCancel
                 onClick={handleModalPopUp}
                 className={styles.continue_cancel_icon}
@@ -57,7 +57,6 @@ const InvoiceModal = ({ setShowPopup, showPopup }) => {
             </div>
             <div className={styles.modal}>
               <div className={styles.modal_content}>
-                <p>Generate Invoice</p>
                 <div className="form">
                   <div className={styles.input_group}>
                     <label htmlFor="repair">Repair Type</label>
@@ -98,16 +97,6 @@ const InvoiceModal = ({ setShowPopup, showPopup }) => {
                     </button>
                   </div>
                   <div className={styles.input_group}>
-                    <label htmlFor="total">Total</label>
-                    <input
-                      type="text"
-                      id="total"
-                      onChange={handleChange}
-                      value={formData.total}
-                      name="total"
-                    />
-                  </div>
-                  <div className={styles.input_group}>
                     <label htmlFor="discount">Discount</label>
                     <input
                       type="text"
@@ -119,40 +108,46 @@ const InvoiceModal = ({ setShowPopup, showPopup }) => {
                   </div>
                   <div className={styles.generate_btn}>
                     <button>Generate</button>
+                    <button>Save</button>
                   </div>
                 </div>
               </div>
-              <div className={styles.modal_content1}>
+              <div className={styles.modal_content}>
                 {dummyDatabase?.map((data, id) => {
                   return (
-                    <li key={id} className={styles.card}>
-                      <div>
-                        <p className={styles.flex}>
-                          <span>Repair Type:</span>
-                          <span>{data?.repairType}</span>
-                        </p>
-                        <p className={styles.flex}>
-                          <span>Quantity:</span>
-                          <span>{data?.quantity}</span>
-                        </p>
-                        <p className={styles.flex}>
-                          <span>Price:</span>
-                          <span>{data?.price}</span>
-                        </p>
+                    <div key={id} className={styles.card}>
+                      <div className={styles.flex}>
+                        <span>Repair Type:</span>
+                        <span>{data?.repairType}</span>
                       </div>
-                    </li>
+                      <div className={styles.flex}>
+                        <span>Quantity:</span>
+                        <span>{data?.quantity}</span>
+                      </div>
+                      <div className={styles.flex}>
+                        <span>Price:</span>
+                        <span>{data?.price}</span>
+                      </div>
+                      <div className={styles.trash}>
+                        <IoTrashOutline />
+                      </div>
+                    </div>
                   );
                 })}
-                {dummyDatabase && (
+                {dummyDatabase.length !== 0 && (
                   <>
-                    <p className={styles.flex}>
+                    <div className={styles.flex}>
+                      <span>Subtotal:</span>
+                      <span>{dummyDatabase.discount}</span>
+                    </div>
+                    <div className={styles.flex}>
                       <span>Discount:</span>
                       <span>{dummyDatabase.discount}</span>
-                    </p>
-                    <p className={styles.flex}>
-                      <span>Total:</span>
+                    </div>
+                    <div className={styles.flex}>
+                      <span>Grand Total:</span>
                       <span>{dummyDatabase.total}</span>
-                    </p>
+                    </div>
                   </>
                 )}
               </div>

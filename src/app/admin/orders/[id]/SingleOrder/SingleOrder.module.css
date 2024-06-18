@@ -7,7 +7,6 @@
   gap: 30px;
 }
 .container {
-  height: 800px;
   padding: 20px;
 }
 .item_name {
@@ -140,29 +139,50 @@
 }
 .card {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: start;
-  padding: 24px 32px;
-  border: 1px;
-  background-color: #f8faff;
-  margin-bottom: 20px;
 }
 .flex {
-  display: grid;
-  grid-template-columns: 300px 300px;
-  gap: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.flex1 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 .flex span:nth-of-type(1) {
   font-size: 16px;
   font-weight: 400;
   color: #696969;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
+}
+
+.flex1 span:nth-of-type(1) {
+  font-size: 16px;
+  font-weight: 400;
+  color: #696969;
+  margin-bottom: 5px;
 }
 
 .flex span:nth-of-type(2) {
   font-size: 16px;
   font-weight: 500;
+  color: #171819;
+  margin-bottom: 5px;
+}
+
+.flex textarea {
+  height: 100px;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+.flex textarea:disabled {
   color: #171819;
 }
 @media screen and (max-width: 760px) {

@@ -97,30 +97,26 @@ const SingleOrder = ({ id }) => {
             <p>Device Diagnostics</p>
           </div>
         </div>
-        <div>
-          {submittedData && (
-            <li className={styles.card}>
-              <div>
-                <p className={styles.flex}>
-                  <span>Severity:</span>
-                  <span>{submittedData.severity}</span>
-                </p>
-                <p className={styles.flex}>
-                  <span>Issues Detected:</span>
-                  <span>{submittedData.issuesDetected}</span>
-                </p>
-                <p className={styles.flex}>
-                  <span>Recommendation:</span>
-                  <span>{submittedData.recommendation}</span>
-                </p>
-                <p className={styles.flex}>
-                  <span> Serial number / IMEI :</span>
-                  <span>{submittedData.imei}</span>
-                </p>
-              </div>
-            </li>
-          )}
-        </div>
+        {submittedData && (
+          <div className={styles.card}>
+            <div className={styles.flex1}>
+              <span>Severity:</span>
+              <span>{submittedData.severity}</span>
+            </div>
+            <div className={styles.flex}>
+              <span>Issues Detected:</span>
+              <textarea value={submittedData?.issuesDetected} disabled />
+            </div>
+            <div className={styles.flex}>
+              <span>Recommendation:</span>
+              <textarea value={submittedData?.recommendation} disabled />
+            </div>
+            <div className={styles.flex1}>
+              <span> Serial number / IMEI:</span>
+              <span>{submittedData.imei}</span>
+            </div>
+          </div>
+        )}
       </div>
       <InvoiceModal setShowPopup={setShowPopup} showPopup={showPopup} />
     </div>

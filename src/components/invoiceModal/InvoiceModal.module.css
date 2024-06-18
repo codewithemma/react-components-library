@@ -8,7 +8,7 @@
   left: 0;
   display: block;
   width: 100%;
-  padding: 20px;
+  padding: 10px 20px;
   background-color: rgba(3, 3, 3, 0.6);
   height: 100vh;
   display: flex;
@@ -36,18 +36,25 @@
   width: 70%;
   padding: 20px;
   background-color: #fff;
-  height: fit-content;
+  height: 500px;
   display: flex;
   flex-direction: column;
   margin-top: 50px;
-  border-radius: 16px;
+  overflow-y: scroll;
 }
 
 .continue_wrapper_header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 40px;
+  align-items: base;
+  margin-bottom: 10px;
+}
+
+.continue_wrapper_header p {
+  font-weight: 600;
+  color: #171819;
+  font-size: 24px;
+  margin-bottom: 15px;
 }
 
 .continue_cancel_icon {
@@ -62,16 +69,10 @@
 }
 
 .modal_content {
-  border: 1px solid #171819;
   padding: 20px;
   height: 400px;
 }
-.modal_content p {
-  font-weight: 600;
-  color: #171819;
-  font-size: 24px;
-  margin-bottom: 15px;
-}
+
 .input_group {
   margin-bottom: 10px;
   display: grid;
@@ -106,6 +107,7 @@
   color: #1655f2;
   padding: 5px 15px;
   margin: 15px 0 15px 110px;
+  cursor: pointer;
 }
 
 .input_group input::placeholder {
@@ -114,10 +116,9 @@
   color: #171819;
 }
 
-.generate_btn button {
-  /* width: Fixed (338px) px;
-  height: Fixed (56px) px; */
-  padding: 17px 152px 17px 152px;
+.generate_btn button:nth-of-type(2) {
+  width: 100%;
+  padding: 15px 15px;
   gap: 10px;
   border-radius: 10px;
   border: none;
@@ -126,33 +127,60 @@
   font-weight: 600;
   font-size: 16px;
   cursor: pointer;
+  margin-top: 19px;
+  margin-bottom: 10px;
+}
+
+.generate_btn button:nth-of-type(1) {
+  width: 100%;
+  padding: 15px 15px;
+  gap: 10px;
+  border-radius: 10px;
+  border: 1px solid #1655f2;
+  background: transparent;
+  color: #171819;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
 }
 .card {
   width: 100%;
+  position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: start;
+  align-items: flex-start;
   padding: 24px 32px;
   border: 1px;
-  background-color: #f8faff;
+  background-color: #dce6ff;
   margin-bottom: 20px;
 }
 .flex {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 100px 2fr;
   gap: 30px;
 }
+
 .flex span:nth-of-type(1) {
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 400;
   color: #696969;
   margin-bottom: 20px;
 }
 
 .flex span:nth-of-type(2) {
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 500;
   color: #171819;
+}
+
+.trash {
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  color: rgb(215, 45, 45);
+  cursor: pointer;
 }
 
 @media screen and (max-width: 900px) {
@@ -163,5 +191,23 @@
   .continue_wrapper {
     width: 300px;
     margin-top: 0px;
+  }
+}
+@media screen and (max-width: 760px) {
+  .modal {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .input_group {
+    /* margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: 100px 250px;
+    align-items: center;
+    gap: 10px; */
+    grid-template-columns: 1fr;
   }
 }
