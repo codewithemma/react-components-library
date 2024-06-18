@@ -106,7 +106,7 @@ const Orders = () => {
         />
       </div>
       <div className={styles.container}>
-        <p>All Orders</p>
+        <p style={{ marginBottom: "20px" }}>All Orders</p>
         <ul>
           {currentData
             ?.filter((user) =>
