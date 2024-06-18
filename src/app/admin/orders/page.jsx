@@ -113,17 +113,17 @@ const Orders = () => {
               user.id.toLowerCase().includes(query.toLowerCase())
             )
             .map((repair, index) => (
-              <li key={index} className={styles.card}>
+              <div key={index} className={styles.card}>
                 <div>
-                  <p className={styles.flex}>
+                  <div className={styles.flex}>
                     <span>Id:</span>
                     <span>{repair.id}</span>
-                  </p>
-                  <p className={styles.flex}>
+                  </div>
+                  <div className={styles.flex}>
                     <span>Device:</span>
                     <span>{repair.device}</span>
-                  </p>
-                  <p className={styles.flex}>
+                  </div>
+                  <div className={styles.flex}>
                     <span>Pick up:</span>
                     <span>
                       {repair.pickUp}
@@ -138,11 +138,11 @@ const Orders = () => {
                         {repair.status}
                       </span>
                     </span>
-                  </p>
-                  <p className={styles.flex}>
+                  </div>
+                  <div className={styles.flex}>
                     <span>Date:</span>
                     <span>{repair.date}</span>
-                  </p>
+                  </div>
                 </div>
                 <Link
                   className={styles.btn}
@@ -150,7 +150,7 @@ const Orders = () => {
                 >
                   <FiEdit />
                 </Link>
-              </li>
+              </div>
             ))}
         </ul>
       </div>

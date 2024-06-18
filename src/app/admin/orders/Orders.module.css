@@ -16,12 +16,13 @@
   border: 1px solid gray;
 }
 .card {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: start;
   padding: 24px 32px;
   border: 1px;
-  background-color: #f8faff;
+  background-color: #dce6ff;
   margin-bottom: 20px;
 }
 .flex {
@@ -70,4 +71,14 @@
 .pagination button {
   width: 100px;
   height: 30px;
+}
+@media screen and (max-width: 470px) {
+  .card {
+    padding: 24px 13px;
+  }
+  .flex {
+    display: grid;
+    grid-template-columns: 70px 200px;
+    gap: 30px;
+  }
 }
