@@ -1,7 +1,8 @@
 "use client";
 import { useState } from "react";
 import styles from "./PasswordChecker.module.css";
-
+import { FaRegEye } from "react-icons/fa";
+import { IoMdEyeOff } from "react-icons/io";
 const PasswordChecker = () => {
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
@@ -69,7 +70,9 @@ const PasswordChecker = () => {
                 onClick={() => {
                   setHidePassword(!hidePassword);
                 }}
-              ></a>
+              >
+                {hidePassword ? <FaRegEye /> : <IoMdEyeOff />}
+              </a>
             </div>
             <div className={styles.progress_bg}>
               <div
