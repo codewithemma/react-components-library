@@ -46,6 +46,7 @@ const PasswordChecker = () => {
     if (type === "Medium") return "#FE804D";
     return "#FF0054";
   };
+
   return (
     <div className={styles.container}>
       <div className={styles.card}>
@@ -93,12 +94,51 @@ const PasswordChecker = () => {
               Your Password is {message}
             </p>
           ) : null}
-          <div className={styles.size}>
-            <p> A Lowercase letter (a)</p>
-            <p> An Uppercase letter (A) </p>
-            <p> A special character (!@#) </p>
-            <p>A number (1) 8 characters minimum</p>
-          </div>
+          {message !== "Strong" && (
+            <div className={styles.size}>
+              <p>Your passwordshould contain:</p>
+              <div className={styles.input_group}>
+                <input
+                  type="checkbox"
+                  checked={password.length >= 8}
+                  readOnly
+                />
+                <label htmlFor="input">8 characters minimum</label>
+              </div>
+              <div className={styles.input_group}>
+                <input
+                  type="checkbox"
+                  checked={/[a-z]+/.test(password)}
+                  readOnly
+                />
+                <label htmlFor="input">A Lowercase letter (a)</label>
+              </div>
+              <div className={styles.input_group}>
+                <input
+                  type="checkbox"
+                  checked={/[A-Z]+/.test(password)}
+                  readOnly
+                />
+                <label htmlFor="input">An Uppercase letter (A)</label>
+              </div>
+              <div className={styles.input_group}>
+                <input
+                  type="checkbox"
+                  checked={/[0-9]+/.test(password)}
+                  readOnly
+                />
+                <label htmlFor="input">A number (1)</label>
+              </div>
+              <div className={styles.input_group}>
+                <input
+                  type="checkbox"
+                  checked={/[^A-Za-z0-9]+/.test(password)}
+                  readOnly
+                />
+                <label htmlFor="input">A special character (!@#)</label>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
