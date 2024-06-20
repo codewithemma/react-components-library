@@ -81,7 +81,6 @@ const PasswordChecker = () => {
               ></div>
             </div>
           </div>
-
           {password.length !== 0 ? (
             //Display password strength message when a password is entered
             <p
@@ -91,6 +90,12 @@ const PasswordChecker = () => {
               Your Password is {message}
             </p>
           ) : null}
+          <div className={styles.size}>
+            <p> A Lowercase letter (a)</p>
+            <p> An Uppercase letter (A) </p>
+            <p> A special character (!@#) </p>
+            <p>A number (1) 8 characters minimum</p>
+          </div>
         </div>
       </div>
     </div>
