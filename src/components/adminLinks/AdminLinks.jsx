@@ -2,7 +2,7 @@ import Link from "next/link";
 import styles from "./AdminLinks.module.css";
 import { FaBoxOpen, FaMapMarkerAlt } from "react-icons/fa";
 import { IoIosNotifications } from "react-icons/io";
-import { PiInvoice } from "react-icons/pi";
+import { FaFileInvoice } from "react-icons/fa6";
 const AdminLinks = () => {
   return (
     <div className={styles.container}>
@@ -19,7 +19,7 @@ const AdminLinks = () => {
         <span>Notification</span>
       </Link>
       <Link href="/admin/invoice" className={styles.link}>
-        <PiInvoice />
+        <FaFileInvoice />
         <span>Invoice</span>
       </Link>
     </div>
