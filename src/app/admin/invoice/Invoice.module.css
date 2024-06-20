@@ -31,13 +31,13 @@
 }
 .flex {
   display: grid;
-  grid-template-columns: 100px 300px;
+  grid-template-columns: 150px 300px;
   gap: 30px;
 }
 .flex_1 {
   display: grid;
   align-items: center;
-  grid-template-columns: 100px 300px;
+  grid-template-columns: 150px 300px;
   gap: 30px;
 }
 .flex span:nth-of-type(1) {

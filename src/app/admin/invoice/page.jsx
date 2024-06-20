@@ -1,68 +1,73 @@
 "use client";
-import { FiEdit } from "react-icons/fi";
-import styles from "./Orders.module.css";
 import AdminLinks from "@/components/adminLinks/AdminLinks";
+import styles from "./Invoice.module.css";
 import { useState } from "react";
-import Link from "next/link";
 
-export const repairData = [
+export const invoiceData = [
   {
     device: "Samsung Galaxy",
     id: "A1B2C3D4E5",
+    username: "Charles",
     status: "Completed",
     date: "30th July, 2023",
   },
   {
     device: "iPhone 13 pro max",
     id: "F6G7H8I9J0",
+    username: "Jack",
     status: "Pending",
     date: "31st December, 2023",
   },
   {
     device: "iPhone 13 pro max",
     id: "K1L2M3N4O5",
+    username: "Nicholas",
     status: "Pending",
     date: "31st December, 2023",
   },
   {
     device: "iPhone 13 pro max",
     id: "P6Q7R8S9T0",
+    username: "Max",
     status: "Pending",
     date: "31st December, 2023",
   },
   {
     device: "Google Pixel 6",
     id: "U1V2W3X4Y5",
+    username: "Christina",
     status: "Pending",
     date: "15th January, 2024",
   },
   {
     device: "OnePlus 9",
     id: "Z6A7B8C9D0",
+    username: "Roger",
     status: "Completed",
     date: "20th February, 2024",
   },
   {
     device: "iPhone 12",
     id: "E1F2G3H4I5",
+    username: "Joshua",
     status: "Pending",
     date: "5th March, 2024",
   },
   {
     device: "Samsung Galaxy S21",
     id: "J6K7L8M9N0",
+    username: "Richard",
     status: "Completed",
     date: "10th April, 2024",
   },
 ];
-
 const ItemsPerPage = 5;
-const Orders = () => {
-  const [filteredData, setFilteredData] = useState(repairData);
+const Invoice = () => {
+  const [filteredData, setFilteredData] = useState(invoiceData);
 
   const [currentPage, setCurrentPage] = useState(1);
   const [query, setQuery] = useState("");
-  const totalItems = repairData.length;
+  const totalItems = invoiceData.length;
   const totalPages = Math.ceil(totalItems / ItemsPerPage);
 
   const lastIndex = currentPage * ItemsPerPage;
@@ -82,9 +87,9 @@ const Orders = () => {
     const searchTerm = event.target.value.toLowerCase();
     setQuery(searchTerm);
     if (searchTerm === "") {
-      setFilteredData(repairData);
+      setFilteredData(invoiceData);
     } else {
-      const filtered = repairData.filter((item) =>
+      const filtered = invoiceData.filter((item) =>
         item.id.toLowerCase().includes(searchTerm)
       );
       setFilteredData(filtered);
@@ -102,7 +107,7 @@ const Orders = () => {
         />
       </div>
       <div className={styles.container}>
-        <p style={{ marginBottom: "20px" }}>All Orders</p>
+        <p style={{ marginBottom: "20px" }}>All Invoices</p>
         <ul>
           {query && currentData.length === 0 ? (
             <div>
@@ -118,52 +123,54 @@ const Orders = () => {
             </div>
           ) : (
             currentData
-              ?.filter((user) =>
-                user.id.toLowerCase().includes(query.toLowerCase())
+              ?.filter(
+                (user) =>
+                  user.id.toLowerCase().includes(query.toLowerCase()) ||
+                  user.username.toLowerCase().includes(query.toLowerCase()) ||
+                  user.device.toLowerCase().includes(query.toLowerCase())
               )
-              .map((repair, index) => (
+              .map((invoice, index) => (
                 <div key={index} className={styles.card}>
                   <div>
                     <div className={styles.flex}>
                       <span>Id:</span>
-                      <span>{repair.id}</span>
+                      <span>{invoice.id}</span>
+                    </div>
+                    <div className={styles.flex}>
+                      <span>Username:</span>
+                      <span>{invoice.username}</span>
                     </div>
                     <div className={styles.flex}>
                       <span>Device:</span>
-                      <span>{repair.device}</span>
+                      <span>{invoice.device}</span>
                     </div>
                     <div className={styles.flex}>
-                      <span>Pick-up Fee:</span>
+                      <span>Payment Status:</span>
                       <span>
-                        {repair.pickUp}
+                        {invoice.pickUp}
                         <span
                           style={{ fontSize: "11px" }}
                           className={
-                            repair.status === "Pending"
+                            invoice.status === "Pending"
                               ? `${styles.pending} ${styles.status}`
                               : `${styles.success} ${styles.status}`
                           }
                         >
-                          {repair.status}
+                          {invoice.status}
                         </span>
                       </span>
                     </div>
                     <div className={styles.flex_1}>
                       <span>Date:</span>
-                      <span>{repair.date}</span>
+                      <span>{invoice.date}</span>
                     </div>
                   </div>
-                  <Link
-                    className={styles.btn}
-                    href={`/admin/orders/${repair.id}`}
-                  >
-                    <FiEdit />
-                  </Link>
                 </div>
               ))
           )}
         </ul>
       </div>
+
       <div className={styles.pagination}>
         <p>
           page{currentPage} of {totalPages}
@@ -184,4 +191,4 @@ const Orders = () => {
   );
 };
 
-export default Orders;
+export default Invoice;
