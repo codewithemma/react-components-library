@@ -98,7 +98,12 @@
   }
   .flex {
     display: grid;
-    grid-template-columns: 70px 200px;
+    grid-template-columns: 80px 200px;
+    gap: 30px;
+  }
+  .flex_1 {
+    display: grid;
+    grid-template-columns: 80px 200px;
     gap: 30px;
   }
 

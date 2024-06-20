@@ -21,6 +21,11 @@
   border-radius: 10px;
 }
 @media screen and (max-width: 470px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* flex-wrap: wrap; */
+  }
   .link {
     font-size: 13px;
     padding: 7px 13px;
