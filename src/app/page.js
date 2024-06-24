@@ -1,4 +1,4 @@
-import PasswordChecker from "../components/passwordChecker/PasswordChecker";
+import DeviceFetch from "@/components/deviceFetch/DeviceFetch";
 import styles from "./page.module.css";
 // import Invoice from "@/components/invoice/Invoice";
 
@@ -8,8 +8,8 @@ export default function Home() {
   }
   return (
     <main className={styles.main}>
-      {/* added a new password checker component */}
-      <PasswordChecker />
+      {/* added a new device component */}
+      <DeviceFetch />
       {/* this is an example */}
       {/* <Invoice /> */}
     </main>
