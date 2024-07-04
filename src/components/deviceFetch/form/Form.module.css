@@ -5,15 +5,10 @@
   border: 1px solid black;
 }
 
-/* .container {
-  } */
 .select {
   width: 100%;
   height: 50px;
+  padding: 10px;
   outline: none;
   margin-bottom: 20px;
 }
-
-/* .select option {
-    padding: 10px;
-  } */

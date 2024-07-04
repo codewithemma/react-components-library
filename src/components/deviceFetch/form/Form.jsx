@@ -1,29 +1,49 @@
+"use client";
+import { useState } from "react";
 import styles from "./Form.module.css";
-const categories = ["Laptop", "MobilePhone", "Tablet"];
-const handleSelectChange = () => {};
+const DeviceFetch = ({ deviceDetails }) => {
+  const [category, setCategory] = useState("");
+  const [filteredDevices, setFilteredDevices] = useState(deviceDetails);
+  const handleCategoryChange = (event) => {
+    const selectedCategory = event.target.value;
+    setCategory(selectedCategory);
+    if (selectedCategory) {
+      const filtered = deviceDetails.phones.filter(
+        (device) =>
+          device.deviceName.toLowerCase() === selectedCategory.toLowerCase()
+      );
+      setFilteredDevices(filtered);
+    } else {
+      setFilteredDevices(deviceDetails.phones);
+    }
+  };
 
-const Form = ({ deviceDetails }) => {
   return (
     <div className={styles.wrapper}>
-      <div className={styles.container}>
-        <form action="">
-          <select className={styles.select} name="" id="">
-            <option value="">Select a device</option>
-            {categories.map((category, id) => (
-              <option key={id} value={category}>
-                {category}
-              </option>
-            ))}
-          </select>
-          <select className={styles.select} name="" id="">
-            {/* {deviceDetails?.map((data, id) => (
-              <p> {data?.status}</p>
-            ))} */}
-          </select>
-        </form>
+      <div className={styles.card}>
+        <select
+          className={styles.select}
+          value={category}
+          onChange={handleCategoryChange}
+        >
+          <option value="">Select a category</option>
+          <option value="iPhone">iPhone</option>
+          <option value="Samsung">Samsung</option>
+          <option value="Infinix">Infinix</option>
+          <option value="Tecno">Tecno</option>
+          <option value="iTel">iTel</option>
+        </select>
+        <select className={styles.select}>
+          <option value="">Select an item</option>
+          {Object.values(filteredDevices).map((device, index) => (
+            <option key={index} value={device.deviceName}>
+              {device.deviceModel}
+            </option>
+          ))}
+        </select>
       </div>
     </div>
   );
 };
 
-export default Form;
+export default DeviceFetch;

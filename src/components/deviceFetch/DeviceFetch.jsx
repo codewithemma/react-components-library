@@ -1,17 +1,8 @@
 import Form from "./form/Form";
 
-const getDeviceData = async (category) => {
+const getDeviceData = async () => {
   try {
-    const resData = await fetch(
-      `https://api.techspecs.io/v4/all/brands?category=${category}`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${process.env.API_KEY}`,
-        },
-      }
-    );
+    const resData = await fetch(`http://localhost:3000/api/devices`);
     const deviceData = await resData.json();
     return deviceData;
   } catch (error) {
@@ -20,8 +11,7 @@ const getDeviceData = async (category) => {
 };
 
 const DeviceFetch = async () => {
-  const data = await getDeviceData("Laptops");
-  // console.log(data);
+  const data = await getDeviceData();
   return <Form deviceDetails={data} />;
 };
 
