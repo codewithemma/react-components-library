@@ -1,8 +1,9 @@
+import { url } from "@/utils/api";
 import Form from "./form/Form";
 
 const getDeviceData = async () => {
   try {
-    const resData = await fetch(`http://localhost:3000/api/devices`);
+    const resData = await fetch(`${url}/api/devices`);
     const deviceData = await resData.json();
     return deviceData;
   } catch (error) {

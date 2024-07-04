@@ -33,7 +33,7 @@ const DeviceFetch = ({ deviceDetails }) => {
           <option value="Tecno">Tecno</option>
           <option value="iTel">iTel</option>
         </select>
-        <select className={styles.select}>
+        <select className={styles.select} disabled={!category}>
           <option value="">Select an item</option>
           {Object.values(filteredDevices).map((device, index) => (
             <option key={index} value={device.deviceName}>
