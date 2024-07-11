@@ -1,19 +1,12 @@
 import { url } from "@/utils/api";
 import Form from "./form/Form";
-
-const getDeviceData = async () => {
-  try {
-    const resData = await fetch(`${url}/api/devices`);
-    const deviceData = await resData.json();
-    return deviceData;
-  } catch (error) {
-    console.log(error);
-  }
-};
+import { connectDB } from "@/utils/connect";
+import phoneModel from "@/models/phone";
 
 const DeviceFetch = async () => {
-  const data = await getDeviceData();
-  return <Form deviceDetails={data} />;
+  await connectDB();
+  const phone = await phoneModel.find({});
+  return <Form deviceDetails={JSON.parse(JSON.stringify(phone[0]))} />;
 };
 
 export default DeviceFetch;
