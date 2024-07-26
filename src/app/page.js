@@ -1,4 +1,4 @@
-import DeviceFetch from "@/components/deviceFetch/DeviceFetch";
+import QrCodeGenerator from "@/components/qrCodeGenerator/QrCodeGenerator";
 
 export default function Home() {
   {
@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <main>
       {/* added a new device component */}
-      <DeviceFetch />
+      <QrCodeGenerator />
       {/* this is an example */}
       {/* <Invoice /> */}
     </main>
