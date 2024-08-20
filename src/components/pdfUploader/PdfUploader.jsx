@@ -2,6 +2,8 @@
 import { useEffect, useState } from "react";
 import FileBase from "react-file-base64";
 
+// you'll need to install cloudinary and react file base 64 for this to work
+
 const PdfUploader = () => {
   const [file, setFile] = useState("");
   const [pdfFiles, setPdfFiles] = useState([]);

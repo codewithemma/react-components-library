@@ -9,6 +9,7 @@ export default function Home() {
     <main>
       {/* added a new device component */}
       {/* <QrCodeGenerator /> */}
+      {/* this is the pdf component */}
       <PdfUploader />
       {/* this is an example */}
       {/* <Invoice /> */}
