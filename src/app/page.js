@@ -1,3 +1,4 @@
+import ImgUploader from "@/components/imgUploader/ImgUploader";
 import PdfUploader from "@/components/pdfUploader/PdfUploader";
 import QrCodeGenerator from "@/components/qrCodeGenerator/QrCodeGenerator";
 
@@ -10,7 +11,7 @@ export default function Home() {
       {/* added a new device component */}
       {/* <QrCodeGenerator /> */}
       {/* this is the pdf component */}
-      <PdfUploader />
+      <ImgUploader />
       {/* this is an example */}
       {/* <Invoice /> */}
     </main>

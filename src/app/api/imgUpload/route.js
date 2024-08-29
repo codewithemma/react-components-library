@@ -1,4 +1,4 @@
-import Pdf from "@/models/pdf";
+import Img from "@/models/image";
 import { cloudinary } from "@/utils/cloudinary";
 import { connectDB } from "@/utils/connect";
 import { NextResponse } from "next/server";
@@ -6,8 +6,8 @@ import { NextResponse } from "next/server";
 export const GET = async (req, res) => {
   try {
     await connectDB();
-    const pdfs = await Pdf.find({});
-    return new NextResponse(JSON.stringify(pdfs), {
+    const images = await Img.find({});
+    return new NextResponse(JSON.stringify(images), {
       status: 500,
     });
   } catch (error) {
@@ -22,9 +22,9 @@ export const GET = async (req, res) => {
 
 export const POST = async (req) => {
   try {
-    const { pdf } = await req.json();
+    const { img } = await req.json();
 
-    if (!pdf) {
+    if (!img) {
       return new NextResponse(JSON.stringify({ message: "No file provided" }), {
         status: 400,
       });
@@ -32,19 +32,18 @@ export const POST = async (req) => {
 
     await connectDB();
 
-    const uploadResponse = await cloudinary.uploader.upload(pdf, {
+    const uploadResponse = await cloudinary.uploader.upload(img, {
       upload_preset: process.env.NEXT_PUBLIC_CLOUDINARY_PRESET_NAME,
-      resource_type: "raw",
     });
 
-    const pdfUrl = uploadResponse.secure_url;
-    console.log("pdf url:", pdfUrl);
+    const imgUrl = uploadResponse.secure_url;
+    console.log("img url:", imgUrl);
 
-    const newPdf = new Pdf({
-      url: pdfUrl,
+    const newImg = new Img({
+      url: imgUrl,
     });
 
-    await newPdf.save();
+    await newImg.save();
 
     return new NextResponse(
       JSON.stringify({ message: "Uploaded successfully" }),
