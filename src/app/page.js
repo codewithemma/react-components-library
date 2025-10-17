@@ -9,9 +9,9 @@ export default function Home() {
   return (
     <main>
       {/* added a new device component */}
-      {/* <QrCodeGenerator /> */}
+       <QrCodeGenerator />
       {/* this is the pdf component */}
-      <ImgUploader />
+     {/* <ImgUploader />  */}
       {/* this is an example */}
       {/* <Invoice /> */}
     </main>
